@@ -1,0 +1,512 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+:root {
+    --focus-color: #ea005e;
+    --matrix_gap: 6px;
+    --default_font_family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
+    --font_size: 18px;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    background-color: #181c22;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+button:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 5px;
+}
+
+button:active {
+    outline: none;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/*! Main heading (h1) */
+h1 {
+    font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+    font-weight: 600;
+    color: #FDFFC2;
+    position: relative;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/*! How to play section */
+.how_to_play {
+    color: #FDFFC2;
+    font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+    width: 25%;
+    position: absolute;
+    left: 2rem;
+    margin-top: 6rem;
+    z-index: 10;
+}
+
+.how_to_play h2 {
+    font-size: 2rem;
+}
+.how_to_play p {
+    font-size: 1.1rem;
+}
+
+/*! Magic square section  */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--matrix_gap);
+    width: auto;
+    position: relative;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    gap: var(--matrix_gap);
+    justify-content: flex-start;
+}
+
+.element {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-family: var(--default_font_family);
+    font-weight: 500;
+    font-size: var(--font_size);
+    border: none;
+}
+
+.filled {
+    color: #FDFFC2;
+    background-image: linear-gradient(45deg,
+                hsl(219deg 13% 22%) 0%,
+                hsl(219deg 12% 23%) 5%,
+                hsl(219deg 12% 24%) 10%,
+                hsl(219deg 12% 25%) 14%,
+                hsl(219deg 12% 26%) 19%,
+                hsl(219deg 11% 27%) 24%,
+                hsl(219deg 11% 28%) 29%,
+                hsl(219deg 11% 29%) 33%,
+                hsl(219deg 11% 30%) 38%,
+                hsl(219deg 11% 31%) 43%,
+                hsl(219deg 11% 32%) 48%,
+                hsl(219deg 11% 33%) 52%,
+                hsl(219deg 10% 34%) 57%,
+                hsl(219deg 10% 35%) 62%,
+                hsl(220deg 10% 36%) 67%,
+                hsl(220deg 10% 37%) 71%,
+                hsl(220deg 10% 38%) 76%,
+                hsl(220deg 10% 39%) 81%,
+                hsl(220deg 10% 40%) 86%,
+                hsl(220deg 10% 41%) 90%,
+                hsl(220deg 10% 42%) 95%,
+                hsl(220deg 10% 43%) 100%);
+
+}
+
+.unfilled::placeholder {
+    color: #FDFFC2;
+}
+
+
+/*! Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    position: absolute;
+    right: calc(25% - 13rem); /* 13 rem is the width of the button */
+    top: 30%;
+}
+
+/*! Check solution button */
+.check_solution {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.check_solution span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+}
+
+.check_solution span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.check_solution span:not(hover) {
+    transition: all 1s;
+}
+
+/*! Restart puzzle button  */
+.restart_puzzle_btn {
+    border: none;
+    outline: none;
+    background-color: #d3223d;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    color: #fff;
+    border-radius: 5px;
+    transition: all ease 0.1s;
+    box-shadow: 0px 5px 0px 0px #790b1c;
+}
+
+.restart_puzzle_btn:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px #790b1c;
+}
+
+/*! Get solution button  */
+.get_solution_btn {
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 15px 20px;
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #FAC921;
+    --default-btn-color: #fff;
+    --font-size: 16px; /*this field should not be empty */  
+    --font-weight: 600;
+    --font-family: Menlo, Roboto Mono, monospace; /* this field should not be empty */
+}
+
+.get_solution_btn {
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+}
+
+.get_solution_btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+}
+
+.get_solution_btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+}
+
+.get_solution_btn:hover,
+.get_solution_btn:focus {
+    background: var(--btn-hover-bg);
+}
+
+.get_solution_btn:hover span,
+.get_solution_btn:focus span {
+    color: var(--hover-btn-color);
+}
+
+.get_solution_btn:hover span::before,
+.get_solution_btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+    0% {
+        content: "#";
+    }
+
+    5% {
+        content: ".";
+    }
+
+    10% {
+        content: "^{";
+    }
+
+    15% {
+        content: "-!";
+    }
+
+    20% {
+        content: "#$_";
+    }
+
+    25% {
+        content: "№:0";
+    }
+
+    30% {
+        content: "#{+.";
+    }
+
+    35% {
+        content: "@}-?";
+    }
+
+    40% {
+        content: "?{4@%";
+    }
+
+    45% {
+        content: "=.,^!";
+    }
+
+    50% {
+        content: "?2@%";
+    }
+
+    55% {
+        content: "\;1}]";
+    }
+
+    60% {
+        content: "?{%:%";
+        right: 0;
+    }
+
+    65% {
+        content: "|{f[4";
+        right: 0;
+    }
+
+    70% {
+        content: "{4%0%";
+        right: 0;
+    }
+
+    75% {
+        content: "'1_0<";
+        right: 0;
+    }
+
+    80% {
+        content: "{0%";
+        right: 0;
+    }
+
+    85% {
+        content: "]>'";
+        right: 0;
+    }
+
+    90% {
+        content: "4";
+        right: 0;
+    }
+
+    95% {
+        content: "2";
+        right: 0;
+    }
+
+    100% {
+        content: "";
+        right: 0;
+    }
+}
+
+
+/*! Display solution section */
+.solution {
+    width: 100px;
+    aspect-ratio: 1/1;
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px; /* half of width */
+    margin-left: -50px;
+    display: none;
+}
+
+.solution img {
+    width: 100%;
+}
+
+
+/*! Loader */
+.loader {
+    position: absolute;
+    width: 50px;
+    aspect-ratio: 1/1;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px; /* half of width */
+    margin-left: -25px;
+    display: none; /* change this to grid to show the loader */
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+    background:
+        var(--c) 50% 0,
+        var(--c) 50% 100%,
+        var(--c) 100% 50%,
+        var(--c) 0 50%;
+    background-size: 12px 12px;
+    animation: l12 1s infinite;
+}
+
+.loader::before {
+    margin: 4px;
+    filter: hue-rotate(45deg);
+    background-size: 8px 8px;
+    animation-timing-function: linear
+}
+
+@keyframes l12 {
+    100% {
+        transform: rotate(.5turn)
+    }
+}
+
+
+/*! Github button  */
+.github_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 1.5px; /* 1.5px is the outline width */
+    bottom: 1.5px; /* 1.5px is the outline width */
+}
+
+.github_button .text {
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+    font-family: system-ui, sans-serif;
+}
+
+.github_button:hover {
+    outline: 1.5px solid #FDFFC2;
+}
+
+
+/*! Made by section  */
+.made_by {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 7px 0;
+    color: #FDFFC2;
+    font-size: 14px;
+    font-family: system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    padding: 10px;
+    box-shadow: rgba(136, 165, 191, 0.2) 6px 2px 16px 0px, rgba(255, 255, 255, 0.3) -6px -2px 16px 0px;
+}
+
+
+
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon icon (currently there is no icon, so to avoid 404 error, use this. Once you get an icon remove this line) -->
+    <link rel="shortcut icon" href="#" /> 
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous" defer></script>
+    <script src="index.js" defer></script>
+    <title>Magic Square</title>
+</head>
+<body>
+
+    <h1>Magic Square</h1>
+
+    <div class="how_to_play">
+        <h2>How to play</h2>
+        <p>All the rows, columns and diagonals of the magic square should add up to 515</p>
+    </div>
+
+    <div class="container">
+        <!--! Row 1 -->
+        <div class="rows row1"> 
+            <input type="number" class="element filled" value="93" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="2" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="16" disabled>
+            <input type="number" class="element filled" value="68" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="52" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="41" disabled>
+        </div>
+
+        <!--! Row 2 -->
+        <div class="rows row2">
+            <input type="number" class="element filled" value="99" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="8" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="17" disabled>
+            <input type="number" class="element filled" value="74" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="58" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="42" disabled>
+        </div>
+
+        <!--! Row 3 -->
+        <div class="rows row3">
+            <input type="number" class="element filled" value="5" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="89" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="23" disabled>
+            <input type="number" class="element filled" value="55" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="64" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="48" disabled>
+        </div>
+
+        <!--! Row 4 -->
+        <div class="rows row4">
+            <input type="number" class="element filled" value="86" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="20" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="4" disabled>
+            <input type="number" class="element filled" value="61" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="70" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="29" disabled>
+        </div>
+
+        <!--! Row 5 -->
+        <div class="rows row5">
+            <input type="number" class="element filled" value="87" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="26" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="10" disabled>
+            <input type="number" class="element filled" value="62" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="76" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="35" disabled>
+        </div>
+
+        <!--! Row 6 -->
+        <div class="rows row6">
+            <input type="number" class="element filled" value="18" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="77" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="91" disabled>
+            <input type="number" class="element filled" value="43" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="27" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="66" disabled>
+        </div>
+
+        <!--! Row 7 -->
+        <div class="rows row7">
+            <input type="number" class="element filled" value="24" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="83" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="92" disabled>
+            <input type="number" class="element filled" value="49" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="33" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="67" disabled>
+        </div>
+
+        <!--! Row 8 -->
+        <div class="rows row8">
+            <input type="number" class="element filled" value="80" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="14" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="98" disabled>
+            <input type="number" class="element filled" value="30" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="39" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="73" disabled>
+        </div>
+
+        <!--! Row 9 -->
+        <div class="rows row9">
+            <input type="number" class="element filled" value="11" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="95" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="79" disabled>
+            <input type="number" class="element filled" value="36" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="45" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="54" disabled>
+        </div>
+
+        <!--! Row 10 -->
+        <div class="rows row10">
+            <input type="number" class="element filled" value="12" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="101" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="85" disabled>
+            <input type="number" class="element filled" value="37" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="51" disabled>
+            <input type="number" class="element unfilled" value="" placeholder='__' min="1" max="300">
+            <input type="number" class="element filled" value="60" disabled>
+        </div>
+    </div>
+
+    
+
+    <div class="buttons">
+        <button type="button" class="check_solution" onclick="check_solution()">
+            <span>Check solution</span>
+        </button>
+
+        <button type="button" onclick="getSolution()" class="get_solution_btn">
+            <span>See solution</span>
+        </button>
+
+        <button type="button" onclick="reload_page()" class="restart_puzzle_btn">
+            <span>Restart puzzle</span>
+        </button>
+    </div>
+
+    <!--! Display solution here -->
+    <div class="solution"><img src="" alt=""></div>
+   
+    <!--! Loader  -->
+    <div class="loader"></div>
+
+    <!--! GitHub source code section  -->
+    <button class="github_button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
+                fill="white">
+            </path>
+        </svg>
+        <a href="#" class="text">Get source code</a>
+    </button>
+
+    <!--! Made by section  -->
+    <div class="made_by">
+        <p>Developed by Prabodhan</p>
+    </div>
+
+
+</body>
+</html>

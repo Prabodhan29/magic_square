@@ -1,4 +1,4 @@
-from ortools.sat.python import cp_model
+from ortools.sat.python import cp_model # type: ignore
 
 #! Create a 2D board from the input_arr
 def createBoard(arr):
@@ -54,8 +54,8 @@ def solve_magic_square(input_arr):
     model.Add(sum(board[i][n - i - 1] for i in range(n)) == target_sum)  #? Anti-diagonal
 
     #? Number used are distinct
-    # all_cells = [board[i][j] for i in range(n) for j in range(n)]
-    # model.AddAllDifferent(all_cells)
+    all_cells = [board[i][j] for i in range(n) for j in range(n)]
+    model.AddAllDifferent(all_cells)
 
     solver = cp_model.CpSolver()
     solver.parameters.enumerate_all_solutions = False
